@@ -20,6 +20,7 @@ const router = Router();
 // Definir las rutas para las notas  
 router.post("/", authMiddleware, upload.single('image'), noteController.createNote);
 router.get("/", authMiddleware, noteController.getNotesByUserId);
+router.get("/:id", authMiddleware, noteController.getNote);
 router.put("/:id", authMiddleware, upload.single('image'), noteController.updateNote);
 router.delete("/:id", authMiddleware, roleMiddleware(["admin"]), noteController.deleteNote);
 router.post("/:id/share", authMiddleware, noteController.shareNote);
