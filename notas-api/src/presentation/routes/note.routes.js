@@ -23,6 +23,6 @@ router.get("/", authMiddleware, noteController.getNotesByUserId);
 router.get("/:id", authMiddleware, noteController.getNote);
 router.put("/:id", authMiddleware, upload.single('image'), noteController.updateNote);
 router.delete("/:id", authMiddleware, noteController.deleteNote);
-router.post("/:id/share", authMiddleware, noteController.shareNote);
+router.post("/:id/shares", authMiddleware, noteController.shareNote);
 
 export default router;
